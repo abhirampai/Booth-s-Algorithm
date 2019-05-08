@@ -1,3 +1,4 @@
+
 library IEEE;
 use IEEE.std_logic_1164.all;
 entity testbench is
@@ -9,19 +10,19 @@ architecture tb of testbench is
         port(x, y: in std_logic_vector(4 downto 0);
              O: out std_logic_vector(9 downto 0));
     end component;
-   signal s,p : std_logic_vector(4 downto 0);
+   signal multiplier,multiplicand : std_logic_vector(4 downto 0);
    signal o : std_logic_vector(9 downto 0);
    signal clk : std_logic :='0';
    begin
 
  
-  BA1: Boot port map(s,p,o);
+  BA1: Boot port map(multiplier,multiplicand,o);
  process
   begin
   
   
-  s<="10001";
-  p<="00001";
+  multiplicand<="01110";
+  multiplier<="11011";
     wait;
   end process;
 end tb;
